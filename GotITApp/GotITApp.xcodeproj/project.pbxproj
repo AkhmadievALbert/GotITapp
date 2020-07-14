@@ -11,7 +11,6 @@
 		0617EAC724BA2D7E000D5FDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAC624BA2D7E000D5FDB /* SceneDelegate.swift */; };
 		0617EACE24BA2D7F000D5FDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0617EACD24BA2D7F000D5FDB /* Assets.xcassets */; };
 		0617EAD124BA2D7F000D5FDB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0617EACF24BA2D7F000D5FDB /* LaunchScreen.storyboard */; };
-		0617EAE424BA3551000D5FDB /* ProgressView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0617EAE324BA3551000D5FDB /* ProgressView.storyboard */; };
 		0617EAE624BA3592000D5FDB /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAE524BA3592000D5FDB /* ProgressViewController.swift */; };
 		0617EAE824BA35B3000D5FDB /* OptionView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0617EAE724BA35B3000D5FDB /* OptionView.storyboard */; };
 		0617EAEA24BA35C5000D5FDB /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAE924BA35C5000D5FDB /* OptionViewController.swift */; };
@@ -21,6 +20,14 @@
 		0617EAF524BA3711000D5FDB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAF424BA3711000D5FDB /* TabBarViewController.swift */; };
 		0617EAF724BA3E63000D5FDB /* AddView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0617EAF624BA3E63000D5FDB /* AddView.storyboard */; };
 		0617EAF924BA3EBA000D5FDB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAF824BA3EBA000D5FDB /* AddViewController.swift */; };
+		0649C27B24BC925F00E4FD6B /* ProgressView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0649C27A24BC925F00E4FD6B /* ProgressView.storyboard */; };
+		0649C27D24BC940600E4FD6B /* Gool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C27C24BC940600E4FD6B /* Gool.swift */; };
+		0649C28524BD8C3400E4FD6B /* NoCompleateViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C28324BD8C3400E4FD6B /* NoCompleateViewCell.swift */; };
+		0649C28624BD8C3400E4FD6B /* NoCompleateViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0649C28424BD8C3400E4FD6B /* NoCompleateViewCell.xib */; };
+		0649C28924BD8D2800E4FD6B /* CompleateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C28724BD8D2800E4FD6B /* CompleateTableViewCell.swift */; };
+		0649C28A24BD8D2800E4FD6B /* CompleateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0649C28824BD8D2800E4FD6B /* CompleateTableViewCell.xib */; };
+		0649C28D24BD8DFA00E4FD6B /* ProgressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C28B24BD8DFA00E4FD6B /* ProgressViewCell.swift */; };
+		0649C28E24BD8DFA00E4FD6B /* ProgressViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0649C28C24BD8DFA00E4FD6B /* ProgressViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +37,6 @@
 		0617EACD24BA2D7F000D5FDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0617EAD024BA2D7F000D5FDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0617EAD224BA2D7F000D5FDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0617EAE324BA3551000D5FDB /* ProgressView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProgressView.storyboard; sourceTree = "<group>"; };
 		0617EAE524BA3592000D5FDB /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		0617EAE724BA35B3000D5FDB /* OptionView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OptionView.storyboard; sourceTree = "<group>"; };
 		0617EAE924BA35C5000D5FDB /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +46,14 @@
 		0617EAF424BA3711000D5FDB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		0617EAF624BA3E63000D5FDB /* AddView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddView.storyboard; sourceTree = "<group>"; };
 		0617EAF824BA3EBA000D5FDB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		0649C27A24BC925F00E4FD6B /* ProgressView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = ProgressView.storyboard; path = ../../../../../../../../../../.Trash/ProgressView.storyboard; sourceTree = "<group>"; };
+		0649C27C24BC940600E4FD6B /* Gool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gool.swift; sourceTree = "<group>"; };
+		0649C28324BD8C3400E4FD6B /* NoCompleateViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCompleateViewCell.swift; sourceTree = "<group>"; };
+		0649C28424BD8C3400E4FD6B /* NoCompleateViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoCompleateViewCell.xib; sourceTree = "<group>"; };
+		0649C28724BD8D2800E4FD6B /* CompleateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleateTableViewCell.swift; sourceTree = "<group>"; };
+		0649C28824BD8D2800E4FD6B /* CompleateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompleateTableViewCell.xib; sourceTree = "<group>"; };
+		0649C28B24BD8DFA00E4FD6B /* ProgressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewCell.swift; sourceTree = "<group>"; };
+		0649C28C24BD8DFA00E4FD6B /* ProgressViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +129,8 @@
 		0617EADB24BA2DEB000D5FDB /* Progress */ = {
 			isa = PBXGroup;
 			children = (
-				0617EAE324BA3551000D5FDB /* ProgressView.storyboard */,
+				0649C27E24BD8BA700E4FD6B /* Cells */,
+				0649C27A24BC925F00E4FD6B /* ProgressView.storyboard */,
 				0617EAE524BA3592000D5FDB /* ProgressViewController.swift */,
 			);
 			path = Progress;
@@ -137,6 +152,20 @@
 				0617EAF424BA3711000D5FDB /* TabBarViewController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0649C27E24BD8BA700E4FD6B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0649C27C24BC940600E4FD6B /* Gool.swift */,
+				0649C28324BD8C3400E4FD6B /* NoCompleateViewCell.swift */,
+				0649C28424BD8C3400E4FD6B /* NoCompleateViewCell.xib */,
+				0649C28724BD8D2800E4FD6B /* CompleateTableViewCell.swift */,
+				0649C28824BD8D2800E4FD6B /* CompleateTableViewCell.xib */,
+				0649C28B24BD8DFA00E4FD6B /* ProgressViewCell.swift */,
+				0649C28C24BD8DFA00E4FD6B /* ProgressViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,11 +228,14 @@
 			files = (
 				0617EAE824BA35B3000D5FDB /* OptionView.storyboard in Resources */,
 				0617EAD124BA2D7F000D5FDB /* LaunchScreen.storyboard in Resources */,
+				0649C28A24BD8D2800E4FD6B /* CompleateTableViewCell.xib in Resources */,
 				0617EAEE24BA360A000D5FDB /* MarketView.storyboard in Resources */,
-				0617EAE424BA3551000D5FDB /* ProgressView.storyboard in Resources */,
 				0617EAF124BA3668000D5FDB /* TabBarView.storyboard in Resources */,
 				0617EACE24BA2D7F000D5FDB /* Assets.xcassets in Resources */,
+				0649C27B24BC925F00E4FD6B /* ProgressView.storyboard in Resources */,
+				0649C28624BD8C3400E4FD6B /* NoCompleateViewCell.xib in Resources */,
 				0617EAF724BA3E63000D5FDB /* AddView.storyboard in Resources */,
+				0649C28E24BD8DFA00E4FD6B /* ProgressViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,11 +247,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0617EAC524BA2D7E000D5FDB /* AppDelegate.swift in Sources */,
+				0649C27D24BC940600E4FD6B /* Gool.swift in Sources */,
+				0649C28524BD8C3400E4FD6B /* NoCompleateViewCell.swift in Sources */,
 				0617EAEA24BA35C5000D5FDB /* OptionViewController.swift in Sources */,
 				0617EAF924BA3EBA000D5FDB /* AddViewController.swift in Sources */,
+				0649C28924BD8D2800E4FD6B /* CompleateTableViewCell.swift in Sources */,
 				0617EAC724BA2D7E000D5FDB /* SceneDelegate.swift in Sources */,
 				0617EAF524BA3711000D5FDB /* TabBarViewController.swift in Sources */,
 				0617EAEC24BA35F7000D5FDB /* MarketViewController.swift in Sources */,
+				0649C28D24BD8DFA00E4FD6B /* ProgressViewCell.swift in Sources */,
 				0617EAE624BA3592000D5FDB /* ProgressViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
