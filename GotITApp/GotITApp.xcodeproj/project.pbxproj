@@ -21,6 +21,8 @@
 		0617EAF524BA3711000D5FDB /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAF424BA3711000D5FDB /* TabBarViewController.swift */; };
 		0617EAF724BA3E63000D5FDB /* AddView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0617EAF624BA3E63000D5FDB /* AddView.storyboard */; };
 		0617EAF924BA3EBA000D5FDB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAF824BA3EBA000D5FDB /* AddViewController.swift */; };
+		841AF10924BDA98500F6C634 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841AF10824BDA98500F6C634 /* ItemCell.swift */; };
+		841AF10C24BDA9EA00F6C634 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841AF10B24BDA9EA00F6C634 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		0617EAF424BA3711000D5FDB /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		0617EAF624BA3E63000D5FDB /* AddView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddView.storyboard; sourceTree = "<group>"; };
 		0617EAF824BA3EBA000D5FDB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		841AF10824BDA98500F6C634 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		841AF10B24BDA9EA00F6C634 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		0617EAC324BA2D7E000D5FDB /* GotITApp */ = {
 			isa = PBXGroup;
 			children = (
+				841AF10A24BDA9B000F6C634 /* Modules */,
 				0617EAD824BA2DB7000D5FDB /* ViewControllers */,
 				0617EAC424BA2D7E000D5FDB /* AppDelegate.swift */,
 				0617EAC624BA2D7E000D5FDB /* SceneDelegate.swift */,
@@ -97,6 +102,7 @@
 		0617EAD924BA2DCA000D5FDB /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				841AF10824BDA98500F6C634 /* ItemCell.swift */,
 				0617EAEB24BA35F7000D5FDB /* MarketViewController.swift */,
 				0617EAED24BA360A000D5FDB /* MarketView.storyboard */,
 			);
@@ -137,6 +143,14 @@
 				0617EAF424BA3711000D5FDB /* TabBarViewController.swift */,
 			);
 			path = TabBar;
+			sourceTree = "<group>";
+		};
+		841AF10A24BDA9B000F6C634 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				841AF10B24BDA9EA00F6C634 /* Item.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +228,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				841AF10924BDA98500F6C634 /* ItemCell.swift in Sources */,
+				841AF10C24BDA9EA00F6C634 /* Item.swift in Sources */,
 				0617EAC524BA2D7E000D5FDB /* AppDelegate.swift in Sources */,
 				0617EAEA24BA35C5000D5FDB /* OptionViewController.swift in Sources */,
 				0617EAF924BA3EBA000D5FDB /* AddViewController.swift in Sources */,
