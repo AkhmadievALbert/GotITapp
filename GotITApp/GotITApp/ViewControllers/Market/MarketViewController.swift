@@ -20,10 +20,9 @@ class MarketViewController: UIViewController {
         items = createArray()
         
         self.title = "Твоя коллекция"
-
-        let attributes = [NSAttributedString.Key.font: UIFont(name: "AvenirNext-DemiBold", size: 20)!]
-        UINavigationBar.appearance().titleTextAttributes = attributes
     }
+    
+
     
     func createArray() -> [Item] {
         let item1 = Item(image: #imageLiteral(resourceName: "jewelry"), title: "Аметист", price: 10)
