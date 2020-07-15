@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ProgressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -18,6 +19,7 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressViewCell") as! ProgressViewCell
+            
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompleateViewCell") as! CompleateTableViewCell
@@ -35,8 +37,6 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
     
     }
     
-
-    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -46,6 +46,11 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
         
         registerNibs()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -59,4 +64,12 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.selectionStyle = .none 
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 300
+        }
+        return 200
+    }
 }
+
