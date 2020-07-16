@@ -14,6 +14,8 @@ class NoCompleateViewCell: UITableViewCell {
 
     @IBOutlet weak var table: UITableView!
     
+    weak var delegate: CellsDelegate?
+    
         override func awakeFromNib() {
             super.awakeFromNib()
             
@@ -28,7 +30,7 @@ class NoCompleateViewCell: UITableViewCell {
             super.setSelected(selected, animated: animated)
         }
         
-        func animate(cell: UITableViewCell, gool: Gool) {
+        func animate(cell: UITableViewCell, gool: Task) {
             let shapeLayer = CAShapeLayer()
             let center = cell.contentView.convert(CGPoint(x: 330, y: 35), from: self)
 
@@ -40,15 +42,15 @@ class NoCompleateViewCell: UITableViewCell {
 
             trackLayer.strokeColor = UIColor.lightGray.cgColor
             trackLayer.lineWidth = 5
-            trackLayer.fillColor = UIColor.clear.cgColor
+            trackLayer.fillColor = UIColor.white.cgColor
             shapeLayer.lineCap = .round
             cell.contentView.layer.addSublayer(trackLayer)
 
             
-            let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2*CGFloat(gool.procent()), clockwise: true)
+            let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2*CGFloat(gool.precentOfDays()), clockwise: true)
             shapeLayer.path = circularPathProgress.cgPath
 
-            shapeLayer.strokeColor = #colorLiteral(red: 0.373221159, green: 0.9422872663, blue: 0.3649424314, alpha: 1)
+            shapeLayer.strokeColor = #colorLiteral(red: 1, green: 0.08010198921, blue: 0, alpha: 1)
             shapeLayer.lineWidth = 5
             shapeLayer.fillColor = UIColor.clear.cgColor
             shapeLayer.strokeEnd = 0
@@ -85,14 +87,16 @@ class NoCompleateViewCell: UITableViewCell {
             
             let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
 
-                compleatedGools.remove(at: indexPath.row)
+                self.delegate?.manager().removeNoCompleatedTask(i: indexPath.row)
+                self.delegate?.updateData()
+                
                 self.table.deleteSections([indexPath.section], with: .automatic)
             }
             let reDoAction = UIContextualAction(style: .normal, title: "ReDo") {  (contextualAction, view, boolValue) in
                 
-                gools.append(noCompleatedGools[indexPath.row])
+                self.delegate?.manager().reDo(i: indexPath.row)
+                self.delegate?.updateData()
                 
-                noCompleatedGools.remove(at: indexPath.row)
                 self.table.deleteSections([indexPath.section], with: .automatic)
             }
             
@@ -110,7 +114,7 @@ class NoCompleateViewCell: UITableViewCell {
     extension NoCompleateViewCell: UITableViewDataSource{
         
         func numberOfSections(in tableView: UITableView) -> Int {
-            return noCompleatedGools.count
+            return self.delegate?.manager().noCompleatedTasks.count ?? 0
            }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -118,7 +122,7 @@ class NoCompleateViewCell: UITableViewCell {
         }
         
         func numberOfSections(tableView: UITableView) -> Int {
-            return noCompleatedGools.count
+            return self.delegate?.manager().noCompleatedTasks.count ?? 0
         }
         
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -135,17 +139,22 @@ class NoCompleateViewCell: UITableViewCell {
             let cell = UITableViewCell()
             
             
-            cell.textLabel?.text = compleatedGools[indexPath.section].name
+            cell.textLabel?.text = self.delegate?.manager().noCompleatedTasks[indexPath.section].nameOfTask ?? nil
             
             cell.backgroundColor = #colorLiteral(red: 0.8634817004, green: 0.516028285, blue: 0.8076471686, alpha: 1)
             cell.layer.borderWidth = 0
             cell.layer.cornerRadius = 25
             cell.clipsToBounds = true
             
-            animate(cell: cell, gool: noCompleatedGools[indexPath.section])
+            animate(cell: cell, gool: (self.delegate?.manager().noCompleatedTasks[indexPath.section])!)
             
             return cell
         }
         
         
     }
+ extension NoCompleateViewCell: CellsUpdateProtocol{
+     func reloadData() {
+         table.reloadData()
+     }
+ }

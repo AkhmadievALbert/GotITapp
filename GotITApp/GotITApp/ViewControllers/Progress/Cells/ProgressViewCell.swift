@@ -15,6 +15,8 @@ class ProgressViewCell: UITableViewCell {
     
     @IBOutlet weak var table: UITableView!
     
+    weak var delegate: CellsDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -28,11 +30,12 @@ class ProgressViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func animate(cell: UITableViewCell, gool: Gool) {
+    func animate(cell: UITableViewCell, gool: Task) {
         let shapeLayer = CAShapeLayer()
         let center = cell.contentView.convert(CGPoint(x: 330, y: 35), from: self)
 
-
+            
+        
         let trackLayer = CAShapeLayer()
         let circularPath = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: 2*CGFloat.pi, clockwise: true)
         
@@ -40,19 +43,28 @@ class ProgressViewCell: UITableViewCell {
 
         trackLayer.strokeColor = UIColor.lightGray.cgColor
         trackLayer.lineWidth = 5
-        trackLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.lineCap = .round
+        trackLayer.fillColor = UIColor.white.cgColor
         cell.contentView.layer.addSublayer(trackLayer)
+    
+        
+        let label = CATextLayer()
+        label.string = String (gool.countOfDay)
+        label.fontSize = 14
+        label.frame = CGRect(x: 0, y: 0, width: trackLayer.bounds.width, height: trackLayer.bounds.height)
+        label.isHidden = false
+        
+        trackLayer.addSublayer(label)
 
         
-        let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2*CGFloat(gool.procent()), clockwise: true)
+        let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2*CGFloat(gool.precentOfDays()), clockwise: true)
         shapeLayer.path = circularPathProgress.cgPath
 
-        shapeLayer.strokeColor = #colorLiteral(red: 0.373221159, green: 0.9422872663, blue: 0.3649424314, alpha: 1)
+        shapeLayer.strokeColor = #colorLiteral(red: 1, green: 0.08010198921, blue: 0, alpha: 1)
         shapeLayer.lineWidth = 5
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.strokeEnd = 0
         shapeLayer.lineCap = .round
+    
 
         cell.contentView.layer.addSublayer(shapeLayer)
         
@@ -84,21 +96,24 @@ extension ProgressViewCell: UITableViewDelegate{
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
-
-            gools.remove(at: indexPath.row)
+            
+            
+            self.delegate?.manager().removeTask(i: indexPath.row)
+            self.delegate?.updateData()
+            
             self.table.deleteSections([indexPath.section], with: .automatic)
         }
         
         let compleateAction = UIContextualAction(style: .normal, title: "Compleate") {  (contextualAction, view, boolValue) in
             
-            compleatedGools.append(gools[indexPath.row])
+            self.delegate?.manager().compleated(i: indexPath.row)
+            self.delegate?.updateData()
             
-            gools.remove(at: indexPath.row)
             self.table.deleteSections([indexPath.section], with: .automatic)
         }
         
         let swipeActions = UISwipeActionsConfiguration(actions: [compleateAction, deleteAction])
-
+        
         return swipeActions
     }
     
@@ -111,7 +126,7 @@ extension ProgressViewCell: UITableViewDelegate{
 extension ProgressViewCell: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return gools.count
+        return self.delegate?.manager().tasks.count ?? 0
        }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -119,7 +134,7 @@ extension ProgressViewCell: UITableViewDataSource{
     }
     
     func numberOfSections(tableView: UITableView) -> Int {
-        return gools.count
+        return self.delegate?.manager().tasks.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -136,14 +151,14 @@ extension ProgressViewCell: UITableViewDataSource{
         let cell = UITableViewCell()
         
         
-        cell.textLabel?.text = gools[indexPath.section].name
+        cell.textLabel?.text = self.delegate?.manager().tasks[indexPath.section].nameOfTask ?? nil
         
         cell.backgroundColor = #colorLiteral(red: 0.47678262, green: 0.7897363305, blue: 0.6584587693, alpha: 1)
         cell.layer.borderWidth = 0
         cell.layer.cornerRadius = 25
         cell.clipsToBounds = true
         
-        animate(cell: cell, gool: gools[indexPath.section])
+        animate(cell: cell, gool: (self.delegate?.manager().tasks[indexPath.section])!)
         
         return cell
     }
@@ -151,4 +166,8 @@ extension ProgressViewCell: UITableViewDataSource{
     
 }
 
-
+extension ProgressViewCell: CellsUpdateProtocol{
+    func reloadData() {
+        table.reloadData()
+    }
+}

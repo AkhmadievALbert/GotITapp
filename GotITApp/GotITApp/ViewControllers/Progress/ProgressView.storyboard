@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Progress View Controller-->
         <scene sceneID="vWh-gq-OXR">
             <objects>
                 <viewController id="XgG-pg-2Ky" customClass="ProgressViewController" customModule="GotITApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,9 +33,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="G33-16-BfK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Bsm-rk-Yv5"/>
+                    <tabBarItem key="tabBarItem" title="" image="progressIcon" id="Bsm-rk-Yv5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="tabBar" destination="Bsm-rk-Yv5" id="RQ4-bq-gqD"/>
                         <outlet property="tableView" destination="b6h-BR-19O" id="mzN-Mo-nJ1"/>
                     </connections>
                 </viewController>
@@ -52,4 +53,7 @@
             <point key="canvasLocation" x="984" y="-145"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="progressIcon" width="48" height="48"/>
+    </resources>
 </document>

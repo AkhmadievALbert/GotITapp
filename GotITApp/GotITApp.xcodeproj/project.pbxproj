@@ -28,6 +28,9 @@
 		0649C28D24BD8DFA00E4FD6B /* ProgressViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C28B24BD8DFA00E4FD6B /* ProgressViewCell.swift */; };
 		0649C28E24BD8DFA00E4FD6B /* ProgressViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0649C28C24BD8DFA00E4FD6B /* ProgressViewCell.xib */; };
 		0649C29024BE2E4000E4FD6B /* ProgressView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0649C28F24BE2E4000E4FD6B /* ProgressView.storyboard */; };
+		0649C29224BF4B8C00E4FD6B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C29124BF4B8C00E4FD6B /* File.swift */; };
+		0649C29524BF770C00E4FD6B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C29424BF770C00E4FD6B /* Task.swift */; };
+		0649C29724C0796100E4FD6B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C29624C0796100E4FD6B /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		0649C28B24BD8DFA00E4FD6B /* ProgressViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewCell.swift; sourceTree = "<group>"; };
 		0649C28C24BD8DFA00E4FD6B /* ProgressViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProgressViewCell.xib; sourceTree = "<group>"; };
 		0649C28F24BE2E4000E4FD6B /* ProgressView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProgressView.storyboard; sourceTree = "<group>"; };
+		0649C29124BF4B8C00E4FD6B /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		0649C29424BF770C00E4FD6B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		0649C29624C0796100E4FD6B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,8 @@
 				0617EACD24BA2D7F000D5FDB /* Assets.xcassets */,
 				0617EACF24BA2D7F000D5FDB /* LaunchScreen.storyboard */,
 				0617EAD224BA2D7F000D5FDB /* Info.plist */,
+				0649C29424BF770C00E4FD6B /* Task.swift */,
+				0649C29624C0796100E4FD6B /* DataManager.swift */,
 			);
 			path = GotITApp;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				0649C28824BD8D2800E4FD6B /* CompleateTableViewCell.xib */,
 				0649C28B24BD8DFA00E4FD6B /* ProgressViewCell.swift */,
 				0649C28C24BD8DFA00E4FD6B /* ProgressViewCell.xib */,
+				0649C29124BF4B8C00E4FD6B /* File.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -247,12 +256,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0617EAC524BA2D7E000D5FDB /* AppDelegate.swift in Sources */,
+				0649C29224BF4B8C00E4FD6B /* File.swift in Sources */,
 				0649C27D24BC940600E4FD6B /* Gool.swift in Sources */,
+				0649C29724C0796100E4FD6B /* DataManager.swift in Sources */,
 				0649C28524BD8C3400E4FD6B /* NoCompleateViewCell.swift in Sources */,
 				0617EAEA24BA35C5000D5FDB /* OptionViewController.swift in Sources */,
 				0617EAF924BA3EBA000D5FDB /* AddViewController.swift in Sources */,
 				0649C28924BD8D2800E4FD6B /* CompleateTableViewCell.swift in Sources */,
 				0617EAC724BA2D7E000D5FDB /* SceneDelegate.swift in Sources */,
+				0649C29524BF770C00E4FD6B /* Task.swift in Sources */,
 				0617EAF524BA3711000D5FDB /* TabBarViewController.swift in Sources */,
 				0617EAEC24BA35F7000D5FDB /* MarketViewController.swift in Sources */,
 				0649C28D24BD8DFA00E4FD6B /* ProgressViewCell.swift in Sources */,

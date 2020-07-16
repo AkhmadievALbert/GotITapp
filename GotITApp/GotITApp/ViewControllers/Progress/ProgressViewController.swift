@@ -9,7 +9,12 @@
 import UIKit
 
 
-class ProgressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+class ProgressViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CellsDelegate {
+   
+    let dataManager = DataManager()
+    
+    @IBOutlet weak var tabBar: UITabBarItem!
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 3
@@ -19,13 +24,15 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
         switch indexPath.row {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "ProgressViewCell") as! ProgressViewCell
-            
+            cell.delegate = self
             return cell
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CompleateViewCell") as! CompleateTableViewCell
+            cell.delegate = self
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "NoCompleateViewCell") as! NoCompleateViewCell
+            cell.delegate = self
             return cell
         }
     }
@@ -37,6 +44,8 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
     
     }
     
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -44,6 +53,7 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.dataSource = self
         tableView.delegate = self
         
+    
         registerNibs()
         // Do any additional setup after loading the view.
     }
@@ -70,6 +80,17 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
             return 300
         }
         return 200
+    }
+    
+    func updateData(){
+        let cells = tableView.visibleCells
+        for cell in cells{
+            (cell as! CellsUpdateProtocol).reloadData()
+        }
+    }
+    
+    func manager() -> DataManager{
+        return self.dataManager
     }
 }
 
