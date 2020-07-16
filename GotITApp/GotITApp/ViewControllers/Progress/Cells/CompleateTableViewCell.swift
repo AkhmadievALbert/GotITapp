@@ -134,7 +134,7 @@ class CompleateTableViewCell: UITableViewCell {
             let cell = UITableViewCell()
             
             
-            cell.textLabel?.text = self.delegate?.manager().compleatedTasks[indexPath.section].nameOfTask ?? nil
+//            cell.textLabel?.text = self.delegate?.manager().compleatedTasks[indexPath.section].nameOfTask ?? nil
             
             cell.backgroundColor = #colorLiteral(red: 0.373221159, green: 0.9422872663, blue: 0.3649424314, alpha: 1)
             cell.layer.borderWidth = 0

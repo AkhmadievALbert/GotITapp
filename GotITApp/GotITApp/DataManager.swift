@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class DataManager {
     
@@ -22,26 +24,43 @@ class DataManager {
     
     private let noCompleatedTasksKey = "noCompleateTasksKey"
     
+    
+    
     init(){
         loadData()
     }
     
     private func loadData(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
         
-        let dataTasks = UserDefaults.standard.array(forKey: tasksKey) as? [Task] ?? []
-        tasks = dataTasks
+        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         
-        let dataCompleatedTasks = UserDefaults.standard.array(forKey: compleatedTasksKey) as? [Task] ?? []
-        compleatedTasks = dataCompleatedTasks
-        
-        let dataNoCompleatedTasks = UserDefaults.standard.array(forKey: noCompleatedTasksKey) as? [Task] ?? []
-        noCompleatedTasks = dataCompleatedTasks
-
+        do{
+            tasks.insert(contentsOf: try context.fetch(fetchRequest), at: 0)
+        }catch let err as NSError{
+            print(err.localizedDescription)
+        }
     }
     
-    func addTask(task: Task){
-        tasks.append(task)
-        save()
+    func addTask(name: String, countOfday: Double, date: Date){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        guard let entity = NSEntityDescription.entity(forEntityName: "Task", in: context) else {return}
+        let taskObject = Task(entity: entity, insertInto: context)
+        
+        taskObject.name = name
+        taskObject.countOfDay = countOfday
+        taskObject.dateOfCreate = date
+        
+        do{
+            try context.save()
+            tasks.insert(taskObject, at: 0)
+        }catch let err as NSError{
+            print(err.localizedDescription)
+        }
+         loadData()
     }
     
     func removeTask(i: Int){
@@ -54,36 +73,28 @@ class DataManager {
     
     func removeCompleatedTask(i: Int){
         
-        compleatedTasks.remove(at: i)
-        save()
+        
         
     }
     
     func removeNoCompleatedTask(i: Int){
         
-        noCompleatedTasks.remove(at: i)
-        save()
+        
         
     }
     
     func reDo(i: Int){
         
-        addTask(task: noCompleatedTasks[i])
-        noCompleatedTasks.remove(at: i)
-        save()
+        
         
     }
     
     func compleated(i: Int) {
-        compleatedTasks.append(tasks[i])
-        tasks.remove(at: i)
-        save()
+       
     }
     
     private func save(){
-        UserDefaults.standard.set(tasks, forKey: tasksKey)
-        UserDefaults.standard.set(compleatedTasks, forKey: compleatedTasksKey)
-        UserDefaults.standard.set(noCompleatedTasks, forKey: noCompleatedTasksKey)
+        
     }
 }
 

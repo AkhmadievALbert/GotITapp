@@ -47,7 +47,7 @@ class NoCompleateViewCell: UITableViewCell {
             cell.contentView.layer.addSublayer(trackLayer)
 
             
-            let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2*CGFloat(gool.precentOfDays()), clockwise: true)
+            let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2, clockwise: true)
             shapeLayer.path = circularPathProgress.cgPath
 
             shapeLayer.strokeColor = #colorLiteral(red: 1, green: 0.08010198921, blue: 0, alpha: 1)
@@ -139,7 +139,7 @@ class NoCompleateViewCell: UITableViewCell {
             let cell = UITableViewCell()
             
             
-            cell.textLabel?.text = self.delegate?.manager().noCompleatedTasks[indexPath.section].nameOfTask ?? nil
+//            cell.textLabel?.text = self.delegate?.manager().noCompleatedTasks[indexPath.section].nameOfTask ?? nil
             
             cell.backgroundColor = #colorLiteral(red: 0.8634817004, green: 0.516028285, blue: 0.8076471686, alpha: 1)
             cell.layer.borderWidth = 0

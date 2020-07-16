@@ -92,5 +92,10 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
     func manager() -> DataManager{
         return self.dataManager
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addView = segue.destination as! AddViewController
+        addView.progressView = self
+    }
 }
 

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import CoreData
 
 class ProgressViewCell: UITableViewCell {
     
@@ -17,9 +17,12 @@ class ProgressViewCell: UITableViewCell {
     
     weak var delegate: CellsDelegate?
     
+    var tasks: [Task] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        table.reloadData()
         title?.text = "Progress"
         table.delegate = self
         table.dataSource = self
@@ -56,7 +59,7 @@ class ProgressViewCell: UITableViewCell {
         trackLayer.addSublayer(label)
 
         
-        let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2*CGFloat(gool.precentOfDays()), clockwise: true)
+        let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2, clockwise: true)
         shapeLayer.path = circularPathProgress.cgPath
 
         shapeLayer.strokeColor = #colorLiteral(red: 1, green: 0.08010198921, blue: 0, alpha: 1)
@@ -151,7 +154,7 @@ extension ProgressViewCell: UITableViewDataSource{
         let cell = UITableViewCell()
         
         
-        cell.textLabel?.text = self.delegate?.manager().tasks[indexPath.section].nameOfTask ?? nil
+        cell.textLabel?.text = self.delegate?.manager().tasks[indexPath.section].name ?? nil
         
         cell.backgroundColor = #colorLiteral(red: 0.47678262, green: 0.7897363305, blue: 0.6584587693, alpha: 1)
         cell.layer.borderWidth = 0
