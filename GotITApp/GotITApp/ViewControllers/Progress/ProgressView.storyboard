@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vP6-c1-XMh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XgG-pg-2Ky">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -7,43 +7,53 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
-        <scene sceneID="hPP-1Q-QqH">
+        <!--Progress View Controller-->
+        <scene sceneID="vWh-gq-OXR">
             <objects>
-                <viewController id="vP6-c1-XMh" customClass="ProgressViewController" customModule="GotITApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vyJ-0n-h16">
+                <viewController id="XgG-pg-2Ky" customClass="ProgressViewController" customModule="GotITApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q7H-Ol-Efh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVu-VM-aKE">
-                                <rect key="frame" x="356" y="40" width="30" height="51"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-BR-19O">
+                                <rect key="frame" x="20" y="111" width="374" height="702"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhW-tz-ykT">
+                                <rect key="frame" x="361" y="44" width="33" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <segue destination="ZN4-Fz-EHH" kind="presentation" id="UVO-bi-7d9"/>
+                                    <segue destination="o6p-mQ-7Fi" kind="presentation" id="SHF-Sp-LM5"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="SRH-w5-zrd"/>
+                        <viewLayoutGuide key="safeArea" id="G33-16-BfK"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="2jF-UM-Bb7"/>
+                    <tabBarItem key="tabBarItem" title="" image="progressIcon" id="Bsm-rk-Yv5"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tabBar" destination="Bsm-rk-Yv5" id="RQ4-bq-gqD"/>
+                        <outlet property="tableView" destination="b6h-BR-19O" id="mzN-Mo-nJ1"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cTM-N8-XQN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKZ-Pv-6RM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="130"/>
+            <point key="canvasLocation" x="137.68115942028987" y="90.401785714285708"/>
         </scene>
         <!--AddView-->
-        <scene sceneID="3M4-9R-Syf">
+        <scene sceneID="Ep6-ff-kqd">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddView" id="ZN4-Fz-EHH" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="o85-qt-2pd"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lkz-bw-oSY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="AddView" id="o6p-mQ-7Fi" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hhL-gI-HGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="-125"/>
+            <point key="canvasLocation" x="984" y="-145"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="progressIcon" width="48" height="48"/>
+    </resources>
 </document>
