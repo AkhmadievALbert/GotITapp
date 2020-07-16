@@ -14,7 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       let optionVar = OptionViewController()
+        
+         let options: UNAuthorizationOptions = [.alert,.sound,.badge]
+         
+         optionVar.notifyCentre.requestAuthorization(options: options)
+         { (wasAllowed, Error) in
+             if !wasAllowed {
+             print("User has declined notifications")
+                 
+             }
+         }
         return true
     }
 
