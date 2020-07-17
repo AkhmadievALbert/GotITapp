@@ -29,7 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              }
              else{
                 print("User has allowed notifications")
-               
             }
          }
         return true
