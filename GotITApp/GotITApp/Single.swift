@@ -11,5 +11,5 @@ import Foundation
 class Single{
     
     static let shared = Single()
-    var progress = ProgressViewCell()
+    var progress = ProgressViewController()
 }

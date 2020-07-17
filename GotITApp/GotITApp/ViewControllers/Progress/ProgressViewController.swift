@@ -61,6 +61,7 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tableView.reloadData()
+        Single.shared.progress = self
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -93,9 +94,5 @@ class ProgressViewController: UIViewController, UITableViewDataSource, UITableVi
         return self.dataManager
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let addView = segue.destination as! AddViewController
-        addView.progressView = self
-    }
 }
 

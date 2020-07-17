@@ -22,7 +22,7 @@ class NoCompleateViewCell: UITableViewCell {
             title?.text = "No Compleated"
             table.delegate = self
             table.dataSource = self
-          
+            
             
         }
 
@@ -30,7 +30,7 @@ class NoCompleateViewCell: UITableViewCell {
             super.setSelected(selected, animated: animated)
         }
         
-        func animate(cell: UITableViewCell, gool: Task) {
+        func animate(cell: UITableViewCell, gool: NoCompleatedTask) {
             let shapeLayer = CAShapeLayer()
             let center = cell.contentView.convert(CGPoint(x: 330, y: 35), from: self)
 
@@ -90,14 +90,12 @@ class NoCompleateViewCell: UITableViewCell {
                 DataManager.shared.removeNoCompleatedTask(i: indexPath.row)
                 self.delegate?.updateData()
                 
-                self.table.deleteSections([indexPath.section], with: .automatic)
             }
             let reDoAction = UIContextualAction(style: .normal, title: "ReDo") {  (contextualAction, view, boolValue) in
                 
                 DataManager.shared.reDo(i: indexPath.row)
                 self.delegate?.updateData()
                 
-                self.table.deleteSections([indexPath.section], with: .automatic)
             }
             
             let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction, reDoAction])
@@ -114,7 +112,7 @@ class NoCompleateViewCell: UITableViewCell {
     extension NoCompleateViewCell: UITableViewDataSource{
         
         func numberOfSections(in tableView: UITableView) -> Int {
-            return DataManager.shared.noCompleatedTasks.count ?? 0
+            return DataManager.shared.noCompleatedTasks.count
            }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -122,7 +120,7 @@ class NoCompleateViewCell: UITableViewCell {
         }
         
         func numberOfSections(tableView: UITableView) -> Int {
-            return DataManager.shared.noCompleatedTasks.count ?? 0
+            return DataManager.shared.noCompleatedTasks.count
         }
         
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -139,7 +137,7 @@ class NoCompleateViewCell: UITableViewCell {
             let cell = UITableViewCell()
             
             
-//            cell.textLabel?.text = self.delegate?.manager().noCompleatedTasks[indexPath.section].nameOfTask ?? nil
+            cell.textLabel?.text = DataManager.shared.noCompleatedTasks[indexPath.section].name ?? nil
             
             cell.backgroundColor = #colorLiteral(red: 0.8634817004, green: 0.516028285, blue: 0.8076471686, alpha: 1)
             cell.layer.borderWidth = 0
