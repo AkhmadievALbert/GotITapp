@@ -7,38 +7,40 @@
 //
 
 import UIKit
+import UserNotifications
 
 class OptionViewController: UIViewController {
-    @IBOutlet weak var switchOn: UISwitch!
+  
     let notifyCentre = UNUserNotificationCenter.current()
+     @IBOutlet weak var Settings: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func Switching(_ sender: Any) {
-        
-        if switchOn.isOn {
+   
+    @IBAction func Settings(_ sender: Any) {
+        let alertController = UIAlertController(title: "Внимание!", message: "Перейти в настройки?", preferredStyle: .alert)
 
-            let options: UNAuthorizationOptions = [.alert,.sound,.badge]
-            
-            notifyCentre.requestAuthorization(options: options)
-            { (wasAllowed, Error) in
-                if !wasAllowed {
-                print("User has declined notifications")
-                    
-                }
+        let settingsAction = UIAlertAction(title: "Настройки", style: .default) { (_) -> Void in
+            guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else{
+            return
             }
-            
-            print("Notifications is allowed")
+            if UIApplication.shared.canOpenURL(settingsUrl){
+                UIApplication.shared.open(settingsUrl, completionHandler: {(success) in
+                    print("Settings opened: \(success)")
+                })
+            }
         }
-        else{
-            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
-            print("Notifications was declined")
-        }
+        alertController.addAction(settingsAction)
+        let cancelAction = UIAlertAction(title: "Отменить", style: .default, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
+   
     
     
     
@@ -47,12 +49,12 @@ class OptionViewController: UIViewController {
         
         let content = UNMutableNotificationContent()
         
-        content.title = "Время истекло!"
-        content.subtitle = "Вы справились с поставленной задачей?"
-        content.body = "Ваше время на выполнение цели закончилось!"
+        content.title = "Внимание!"
+        content.subtitle = "У вас есть незавершенные цели"
+        content.body = "Не забывайте отслеживать их выполнение!"
         content.sound = UNNotificationSound.default
        
-        let date = Date().addingTimeInterval(4)
+        let date = Date().addingTimeInterval(1)
         
         let dataComp = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second],
                                                        from: date)

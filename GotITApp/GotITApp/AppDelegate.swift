@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 
 @UIApplicationMain
@@ -28,32 +29,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              print("User has declined notifications")
                  
              }
+             else{
+                print("User has allowed notifications")
+            }
          }
         return true
     }
     
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        checkDate()
-        
-        let vC = OptionViewController()
-        
-        for task in DataManager.shared.tasks{
-            if task.interval >= task.countOfDay{
-                vC.sendNotification()
-            }
-        }
-    }
-    
-    func checkDate(){
-        
-        let todaysDate = Date()
-        
-        for task in DataManager.shared.tasks {
-            if !todaysDate.timeIntervalSince(task.dateOfCreate!).isLess(than: task.interval*60){
-                task.interval += 1
-            }
-        }
-    }
+  
 
     // MARK: UISceneSession Lifecycle
 
