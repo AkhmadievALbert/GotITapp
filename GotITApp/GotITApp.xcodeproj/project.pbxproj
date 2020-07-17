@@ -32,6 +32,8 @@
 		0649C29724C0796100E4FD6B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C29624C0796100E4FD6B /* DataManager.swift */; };
 		0649C29D24C0E1DB00E4FD6B /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0649C29B24C0E1DB00E4FD6B /* Data.xcdatamodeld */; };
 		A9A3A66A24C0FBFB0035BCA3 /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A66924C0FBFB0035BCA3 /* Single.swift */; };
+		A9DE895324C1B589001CE8C2 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE895224C1B589001CE8C2 /* ItemCell.swift */; };
+		A9DE895624C1B5BF001CE8C2 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DE895524C1B5BF001CE8C2 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		0649C29924C0DF9700E4FD6B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0649C29C24C0E1DB00E4FD6B /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		A9A3A66924C0FBFB0035BCA3 /* Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Single.swift; sourceTree = "<group>"; };
+		A9DE895224C1B589001CE8C2 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		A9DE895524C1B5BF001CE8C2 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,7 @@
 		0617EAC324BA2D7E000D5FDB /* GotITApp */ = {
 			isa = PBXGroup;
 			children = (
+				A9DE895424C1B5AF001CE8C2 /* Modules */,
 				0617EAD824BA2DB7000D5FDB /* ViewControllers */,
 				0617EAC424BA2D7E000D5FDB /* AppDelegate.swift */,
 				0617EAC624BA2D7E000D5FDB /* SceneDelegate.swift */,
@@ -124,6 +129,7 @@
 		0617EAD924BA2DCA000D5FDB /* Market */ = {
 			isa = PBXGroup;
 			children = (
+				A9DE895224C1B589001CE8C2 /* ItemCell.swift */,
 				0617EAEB24BA35F7000D5FDB /* MarketViewController.swift */,
 				0617EAED24BA360A000D5FDB /* MarketView.storyboard */,
 			);
@@ -188,6 +194,14 @@
 				0649C29924C0DF9700E4FD6B /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A9DE895424C1B5AF001CE8C2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				A9DE895524C1B5BF001CE8C2 /* Item.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,12 +284,14 @@
 			files = (
 				A9A3A66A24C0FBFB0035BCA3 /* Single.swift in Sources */,
 				0617EAC524BA2D7E000D5FDB /* AppDelegate.swift in Sources */,
+				A9DE895624C1B5BF001CE8C2 /* Item.swift in Sources */,
 				0649C29224BF4B8C00E4FD6B /* File.swift in Sources */,
 				0649C27D24BC940600E4FD6B /* Gool.swift in Sources */,
 				0649C29724C0796100E4FD6B /* DataManager.swift in Sources */,
 				0649C28524BD8C3400E4FD6B /* NoCompleateViewCell.swift in Sources */,
 				0617EAEA24BA35C5000D5FDB /* OptionViewController.swift in Sources */,
 				0617EAF924BA3EBA000D5FDB /* AddViewController.swift in Sources */,
+				A9DE895324C1B589001CE8C2 /* ItemCell.swift in Sources */,
 				0649C29D24C0E1DB00E4FD6B /* Data.xcdatamodeld in Sources */,
 				0649C28924BD8D2800E4FD6B /* CompleateTableViewCell.swift in Sources */,
 				0617EAC724BA2D7E000D5FDB /* SceneDelegate.swift in Sources */,
@@ -426,6 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GotITApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -443,6 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.GotITApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ENABLE_BATCH_MODE = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
