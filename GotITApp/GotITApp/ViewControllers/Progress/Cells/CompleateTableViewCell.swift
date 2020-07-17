@@ -89,7 +89,7 @@ class CompleateTableViewCell: UITableViewCell {
             
             let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
 
-                self.delegate?.manager().removeCompleatedTask(i: indexPath.row)
+                DataManager.shared.removeCompleatedTask(i: indexPath.row)
                 self.delegate?.updateData()
                 
                 self.table.deleteSections([indexPath.section], with: .automatic)
@@ -109,7 +109,7 @@ class CompleateTableViewCell: UITableViewCell {
     extension CompleateTableViewCell: UITableViewDataSource{
         
         func numberOfSections(in tableView: UITableView) -> Int {
-            return self.delegate?.manager().compleatedTasks.count ?? 0
+            return DataManager.shared.compleatedTasks.count ?? 0
            }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,7 +117,7 @@ class CompleateTableViewCell: UITableViewCell {
         }
         
         func numberOfSections(tableView: UITableView) -> Int {
-            return self.delegate?.manager().compleatedTasks.count ?? 0
+            return DataManager.shared.compleatedTasks.count ?? 0
         }
         
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -141,7 +141,7 @@ class CompleateTableViewCell: UITableViewCell {
             cell.layer.cornerRadius = 25
             cell.clipsToBounds = true
             
-            animate(cell: cell, gool: (self.delegate?.manager().compleatedTasks[indexPath.section])!)
+            animate(cell: cell, gool: (DataManager.shared.compleatedTasks[indexPath.section]))
             
             return cell
         }

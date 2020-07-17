@@ -86,15 +86,15 @@ class NoCompleateViewCell: UITableViewCell {
         func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
             
             let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
-
-                self.delegate?.manager().removeNoCompleatedTask(i: indexPath.row)
+                
+                DataManager.shared.removeNoCompleatedTask(i: indexPath.row)
                 self.delegate?.updateData()
                 
                 self.table.deleteSections([indexPath.section], with: .automatic)
             }
             let reDoAction = UIContextualAction(style: .normal, title: "ReDo") {  (contextualAction, view, boolValue) in
                 
-                self.delegate?.manager().reDo(i: indexPath.row)
+                DataManager.shared.reDo(i: indexPath.row)
                 self.delegate?.updateData()
                 
                 self.table.deleteSections([indexPath.section], with: .automatic)
@@ -114,7 +114,7 @@ class NoCompleateViewCell: UITableViewCell {
     extension NoCompleateViewCell: UITableViewDataSource{
         
         func numberOfSections(in tableView: UITableView) -> Int {
-            return self.delegate?.manager().noCompleatedTasks.count ?? 0
+            return DataManager.shared.noCompleatedTasks.count ?? 0
            }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -122,7 +122,7 @@ class NoCompleateViewCell: UITableViewCell {
         }
         
         func numberOfSections(tableView: UITableView) -> Int {
-            return self.delegate?.manager().noCompleatedTasks.count ?? 0
+            return DataManager.shared.noCompleatedTasks.count ?? 0
         }
         
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -146,7 +146,7 @@ class NoCompleateViewCell: UITableViewCell {
             cell.layer.cornerRadius = 25
             cell.clipsToBounds = true
             
-            animate(cell: cell, gool: (self.delegate?.manager().noCompleatedTasks[indexPath.section])!)
+            animate(cell: cell, gool: (DataManager.shared.noCompleatedTasks[indexPath.section]))
             
             return cell
         }

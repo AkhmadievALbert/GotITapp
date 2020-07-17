@@ -16,16 +16,17 @@ class ProgressViewCell: UITableViewCell {
     @IBOutlet weak var table: UITableView!
     
     weak var delegate: CellsDelegate?
-    
+  
     var tasks: [Task] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        table.reloadData()
+        
         title?.text = "Progress"
         table.delegate = self
         table.dataSource = self
+        Single.shared.progress = self
         
     }
 
@@ -86,7 +87,6 @@ class ProgressViewCell: UITableViewCell {
         shapeLayer.add(basicAnimation, forKey: "urSoBasic")
 
     }
-    
 }
 
 extension ProgressViewCell: UITableViewDelegate{
@@ -101,7 +101,7 @@ extension ProgressViewCell: UITableViewDelegate{
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
             
             
-            self.delegate?.manager().removeTask(i: indexPath.row)
+            DataManager.shared.removeTask(i: indexPath.row)
             self.delegate?.updateData()
             
             self.table.deleteSections([indexPath.section], with: .automatic)
@@ -109,7 +109,7 @@ extension ProgressViewCell: UITableViewDelegate{
         
         let compleateAction = UIContextualAction(style: .normal, title: "Compleate") {  (contextualAction, view, boolValue) in
             
-            self.delegate?.manager().compleated(i: indexPath.row)
+            DataManager.shared.compleated(i: indexPath.row)
             self.delegate?.updateData()
             
             self.table.deleteSections([indexPath.section], with: .automatic)
@@ -129,7 +129,7 @@ extension ProgressViewCell: UITableViewDelegate{
 extension ProgressViewCell: UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.delegate?.manager().tasks.count ?? 0
+        return DataManager.shared.tasks.count
        }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -137,7 +137,7 @@ extension ProgressViewCell: UITableViewDataSource{
     }
     
     func numberOfSections(tableView: UITableView) -> Int {
-        return self.delegate?.manager().tasks.count ?? 0
+        return DataManager.shared.tasks.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -154,14 +154,14 @@ extension ProgressViewCell: UITableViewDataSource{
         let cell = UITableViewCell()
         
         
-        cell.textLabel?.text = self.delegate?.manager().tasks[indexPath.section].name ?? nil
+        cell.textLabel?.text = DataManager.shared.tasks[indexPath.section].name ?? nil
         
         cell.backgroundColor = #colorLiteral(red: 0.47678262, green: 0.7897363305, blue: 0.6584587693, alpha: 1)
         cell.layer.borderWidth = 0
         cell.layer.cornerRadius = 25
         cell.clipsToBounds = true
         
-        animate(cell: cell, gool: (self.delegate?.manager().tasks[indexPath.section])!)
+        animate(cell: cell, gool: (DataManager.shared.tasks[indexPath.section]))
         
         return cell
     }

@@ -12,6 +12,8 @@ import UIKit
 
 class DataManager {
     
+    static let shared = DataManager()
+    
     var tasks = [Task]()
     
     var compleatedTasks = [Task]()
@@ -37,6 +39,7 @@ class DataManager {
         let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
         
         do{
+            tasks.removeAll()
             tasks.insert(contentsOf: try context.fetch(fetchRequest), at: 0)
         }catch let err as NSError{
             print(err.localizedDescription)
@@ -56,11 +59,12 @@ class DataManager {
         
         do{
             try context.save()
-            tasks.insert(taskObject, at: 0)
+            loadData()
+            //tasks.insert(taskObject, at: 0)
         }catch let err as NSError{
             print(err.localizedDescription)
         }
-         loadData()
+         //loadData()
     }
     
     func removeTask(i: Int){

@@ -14,7 +14,7 @@ protocol CellsUpdateProtocol {
 
 protocol CellsDelegate: AnyObject{
     func updateData()
-    func manager() -> DataManager
+    //func manager() -> DataManager
 }
 
 

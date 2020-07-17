@@ -31,6 +31,7 @@
 		0649C29224BF4B8C00E4FD6B /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C29124BF4B8C00E4FD6B /* File.swift */; };
 		0649C29724C0796100E4FD6B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0649C29624C0796100E4FD6B /* DataManager.swift */; };
 		0649C29D24C0E1DB00E4FD6B /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0649C29B24C0E1DB00E4FD6B /* Data.xcdatamodeld */; };
+		A9A3A66A24C0FBFB0035BCA3 /* Single.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A3A66924C0FBFB0035BCA3 /* Single.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		0649C29624C0796100E4FD6B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		0649C29924C0DF9700E4FD6B /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0649C29C24C0E1DB00E4FD6B /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		A9A3A66924C0FBFB0035BCA3 /* Single.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Single.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				0617EACF24BA2D7F000D5FDB /* LaunchScreen.storyboard */,
 				0617EAD224BA2D7F000D5FDB /* Info.plist */,
 				0649C29624C0796100E4FD6B /* DataManager.swift */,
+				A9A3A66924C0FBFB0035BCA3 /* Single.swift */,
 			);
 			path = GotITApp;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9A3A66A24C0FBFB0035BCA3 /* Single.swift in Sources */,
 				0617EAC524BA2D7E000D5FDB /* AppDelegate.swift in Sources */,
 				0649C29224BF4B8C00E4FD6B /* File.swift in Sources */,
 				0649C27D24BC940600E4FD6B /* Gool.swift in Sources */,
