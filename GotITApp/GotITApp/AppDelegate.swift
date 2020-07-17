@@ -8,10 +8,12 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    let oV = OptionViewController()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -25,9 +27,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              print("User has declined notifications")
                  
              }
+             else{
+                print("User has allowed notifications")
+                self.oV.sendNotification()
+            }
          }
         return true
     }
+    
+  
 
     // MARK: UISceneSession Lifecycle
 
