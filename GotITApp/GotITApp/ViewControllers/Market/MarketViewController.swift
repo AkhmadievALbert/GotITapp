@@ -8,32 +8,33 @@
 
 import UIKit
 
-class MarketViewController: UIViewController {
+let item1 = Item(image: #imageLiteral(resourceName: "jewelry.png"), title: "Аметист", price: 10)
+let item2 = Item(image: #imageLiteral(resourceName: "diamond.png"), title: "Топаз", price: 20)
+let item3 = Item(image: #imageLiteral(resourceName: "gem.png"), title: "Рубин", price: 50)
+let item4 = Item(image: #imageLiteral(resourceName: "sapphire.png"), title: "Сапфир", price: 100)
+let item5 = Item(image: #imageLiteral(resourceName: "emerald.png"), title: "Изумруд", price: 500)
+let item6 = Item(image: #imageLiteral(resourceName: "diamond.png"), title: "Бриллиант", price: 1000)
 
-    let tokenManager = TokenManager()
+class MarketViewController: UIViewController {
     
     @IBOutlet var storeTableView: UITableView!
+    //let tokenManager = TokenManager()
     
-    var items: [Item] = []
- 
+    var items = [item1, item2, item3, item4, item5, item6]
+    
+    @IBOutlet weak var navBar: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        items = createArray()
+        TokenManager.loadData()
         
+        navBar.title = String(TokenManager.token)
     }
     
-
-    
-    func createArray() -> [Item] {
-        let item1 = Item(image: #imageLiteral(resourceName: "jewelry.png"), title: "Аметист", price: 10)
-        let item2 = Item(image: #imageLiteral(resourceName: "diamond.png"), title: "Топаз", price: 20)
-        let item3 = Item(image: #imageLiteral(resourceName: "gem.png"), title: "Рубин", price: 50)
-        let item4 = Item(image: #imageLiteral(resourceName: "sapphire.png"), title: "Сапфир", price: 100)
-        let item5 = Item(image: #imageLiteral(resourceName: "emerald.png"), title: "Изумруд", price: 500)
-        let item6 = Item(image: #imageLiteral(resourceName: "diamond.png"), title: "Бриллиант", price: 1000)
-        
-        return [item1, item2, item3, item4, item5, item6]
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navBar.title = String(TokenManager.token)
     }
 }
 

@@ -46,7 +46,7 @@
                                                 <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </state>
                                             <connections>
-                                                <action selector="buyItem:" destination="tM2-fe-Med" eventType="touchUpInside" id="1Cg-Gv-zLA"/>
+                                                <action selector="buyItem:" destination="tM2-fe-Med" eventType="touchUpInside" id="u6f-cr-VK7"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -78,6 +78,7 @@
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navBar" destination="6zQ-S4-m3G" id="QbD-dT-zb5"/>
                         <outlet property="storeTableView" destination="w6y-Qm-Ley" id="oIJ-R4-TjQ"/>
                     </connections>
                 </viewController>
