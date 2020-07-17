@@ -105,7 +105,7 @@ extension ProgressViewCell: UITableViewDelegate{
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
             
-            self.tokenManager.minusToken(token: 10)
+            TokenManager.minusToken(value: 10)
             DataManager.shared.removeTask(i: indexPath.section)
             self.delegate?.updateData()
             
@@ -113,7 +113,7 @@ extension ProgressViewCell: UITableViewDelegate{
         
         let compleateAction = UIContextualAction(style: .normal, title: "Compleate") {  (contextualAction, view, boolValue) in
             
-            self.tokenManager.addToken(token: DataManager.shared.tasks[indexPath.section].countOfDay*5)
+            TokenManager.addToken(value: DataManager.shared.tasks[indexPath.section].countOfDay*5)
             DataManager.shared.compleated(i: indexPath.section)
             self.delegate?.updateData()
             
