@@ -35,6 +35,9 @@ class ProgressViewCell: UITableViewCell {
     }
     
     func animate(cell: UITableViewCell, gool: Task) {
+        
+        let progress = gool.countOfDay / 2
+        
         let shapeLayer = CAShapeLayer()
         let center = cell.contentView.convert(CGPoint(x: 330, y: 35), from: self)
 
@@ -149,10 +152,13 @@ extension ProgressViewCell: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Task")
         
         
         cell.textLabel?.text = DataManager.shared.tasks[indexPath.section].name ?? nil
+        
+        cell.detailTextLabel?.text = DataManager.shared.tasks[indexPath.section].dateOfCreate ?? nil
+        
         
         cell.backgroundColor = #colorLiteral(red: 0.47678262, green: 0.7897363305, blue: 0.6584587693, alpha: 1)
         cell.layer.borderWidth = 0

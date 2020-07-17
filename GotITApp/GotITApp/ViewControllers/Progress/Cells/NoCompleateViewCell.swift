@@ -134,10 +134,11 @@ class NoCompleateViewCell: UITableViewCell {
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = UITableViewCell()
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "NoCompleatedTask")
             
             
             cell.textLabel?.text = DataManager.shared.noCompleatedTasks[indexPath.section].name ?? nil
+            cell.detailTextLabel?.text = DataManager.shared.noCompleatedTasks[indexPath.section].dateOfCreate ?? nil
             
             cell.backgroundColor = #colorLiteral(red: 0.8634817004, green: 0.516028285, blue: 0.8076471686, alpha: 1)
             cell.layer.borderWidth = 0

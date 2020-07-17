@@ -129,10 +129,11 @@ class CompleateTableViewCell: UITableViewCell {
         }
         
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = UITableViewCell()
+            let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "CompleatedTask")
             
             
             cell.textLabel?.text = DataManager.shared.compleatedTasks[indexPath.section].name ?? nil
+            cell.detailTextLabel?.text = DataManager.shared.compleatedTasks[indexPath.section].dateOfCreate ?? nil
             
             cell.backgroundColor = #colorLiteral(red: 0.373221159, green: 0.9422872663, blue: 0.3649424314, alpha: 1)
             cell.layer.borderWidth = 0
