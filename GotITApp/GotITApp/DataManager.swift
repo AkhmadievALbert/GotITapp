@@ -64,7 +64,7 @@ class DataManager {
         }
     }
     
-    func addTask(name: String, countOfday: Double, date: String){
+    func addTask(name: String, countOfday: Double, date: Date, interval: Double){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
@@ -74,6 +74,7 @@ class DataManager {
         taskObject.name = name
         taskObject.countOfDay = countOfday
         taskObject.dateOfCreate = date
+        taskObject.interval = interval
         
         do{
             try context.save()
@@ -184,8 +185,9 @@ class DataManager {
         loadData()
     }
     
-    private func save(){
-        
+    func plusInterval(i: Int){
+        tasks[i].interval += 1
+        loadData()
     }
 }
 

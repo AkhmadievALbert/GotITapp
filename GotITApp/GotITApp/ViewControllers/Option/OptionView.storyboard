@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Option View Controller-->
         <scene sceneID="mXY-ds-MK3">
             <objects>
                 <viewController id="oXw-ks-KNy" customClass="OptionViewController" customModule="GotITApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -49,7 +49,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zU1-zo-5Vf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="gmd-4H-GUn"/>
+                    <tabBarItem key="tabBarItem" title="" image="optionIcon" id="gmd-4H-GUn"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9J-Sr-HRI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -127,5 +127,6 @@
     <resources>
         <image name="bell" catalog="system" width="128" height="124"/>
         <image name="lightbulb.fill" catalog="system" width="113" height="128"/>
+        <image name="optionIcon" width="30" height="30"/>
     </resources>
 </document>

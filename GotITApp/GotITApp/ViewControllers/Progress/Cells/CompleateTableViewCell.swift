@@ -133,7 +133,12 @@ class CompleateTableViewCell: UITableViewCell {
             
             
             cell.textLabel?.text = DataManager.shared.compleatedTasks[indexPath.section].name ?? nil
-            cell.detailTextLabel?.text = DataManager.shared.compleatedTasks[indexPath.section].dateOfCreate ?? nil
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+                       
+            let dateString = dateFormatter.string(from: DataManager.shared.compleatedTasks[indexPath.section].dateOfCreate! as Date)
+            cell.detailTextLabel?.text = dateString
             
             cell.backgroundColor = #colorLiteral(red: 0.373221159, green: 0.9422872663, blue: 0.3649424314, alpha: 1)
             cell.layer.borderWidth = 0

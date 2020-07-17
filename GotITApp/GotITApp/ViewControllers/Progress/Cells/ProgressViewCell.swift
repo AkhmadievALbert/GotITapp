@@ -63,7 +63,7 @@ class ProgressViewCell: UITableViewCell {
         trackLayer.addSublayer(label)
 
         
-        let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2, clockwise: true)
+        let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi * 2 * CGFloat (gool.interval/gool.countOfDay) - CGFloat.pi/2, clockwise: true)
         shapeLayer.path = circularPathProgress.cgPath
 
         shapeLayer.strokeColor = #colorLiteral(red: 1, green: 0.08010198921, blue: 0, alpha: 1)
@@ -157,7 +157,11 @@ extension ProgressViewCell: UITableViewDataSource{
         
         cell.textLabel?.text = DataManager.shared.tasks[indexPath.section].name ?? nil
         
-        cell.detailTextLabel?.text = DataManager.shared.tasks[indexPath.section].dateOfCreate ?? nil
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+                   
+        let dateString = dateFormatter.string(from: DataManager.shared.tasks[indexPath.section].dateOfCreate! as Date)
+        cell.detailTextLabel?.text = dateString
         
         
         cell.backgroundColor = #colorLiteral(red: 0.47678262, green: 0.7897363305, blue: 0.6584587693, alpha: 1)

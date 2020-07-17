@@ -138,7 +138,12 @@ class NoCompleateViewCell: UITableViewCell {
             
             
             cell.textLabel?.text = DataManager.shared.noCompleatedTasks[indexPath.section].name ?? nil
-            cell.detailTextLabel?.text = DataManager.shared.noCompleatedTasks[indexPath.section].dateOfCreate ?? nil
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+                       
+            let dateString = dateFormatter.string(from: DataManager.shared.noCompleatedTasks[indexPath.section].dateOfCreate! as Date)
+            cell.detailTextLabel?.text = dateString
             
             cell.backgroundColor = #colorLiteral(red: 0.8634817004, green: 0.516028285, blue: 0.8076471686, alpha: 1)
             cell.layer.borderWidth = 0

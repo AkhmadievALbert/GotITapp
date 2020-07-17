@@ -19,7 +19,6 @@ class MarketViewController: UIViewController {
         
         items = createArray()
         
-        self.title = "Твоя коллекция"
     }
     
 

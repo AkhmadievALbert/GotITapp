@@ -70,13 +70,13 @@ class AddViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDat
         } else {
             let count = Double ("\(daysCountLabel.text!)")
             
-            let todaysDate = NSDate()
+            let todaysDate = Date()
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd-MM-yyyy"
             
             let dateString = dateFormatter.string(from: todaysDate as Date)
             
-            DataManager.shared.addTask(name: targetTextField.text!, countOfday: count!, date: dateString)
+            DataManager.shared.addTask(name: targetTextField.text!, countOfday: count!, date: todaysDate, interval: 0)
             
             Single.shared.progress.updateData()
             dismiss(animated: true, completion: nil)

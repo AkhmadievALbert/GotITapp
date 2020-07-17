@@ -31,7 +31,6 @@ class OptionViewController: UIViewController {
                     
                 }
             }
-                
             
             print("Notifications is allowed")
         }
@@ -40,6 +39,8 @@ class OptionViewController: UIViewController {
             print("Notifications was declined")
         }
     }
+    
+    
     
     func sendNotification(){
         let centre = UNUserNotificationCenter.current()

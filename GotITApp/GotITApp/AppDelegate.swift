@@ -12,9 +12,11 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        checkDate()
+        
        let optionVar = OptionViewController()
         
          let options: UNAuthorizationOptions = [.alert,.sound,.badge]
@@ -27,6 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              }
          }
         return true
+    }
+    
+    func checkDate(){
+        
+        let todaysDate = Date()
+        
+        for task in DataManager.shared.tasks {
+            if !todaysDate.timeIntervalSince(task.dateOfCreate!).isLess(than: task.interval*60){
+                task.interval += 1
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle
