@@ -26,7 +26,7 @@ class ProgressViewCell: UITableViewCell {
         title?.text = "Progress"
         table.delegate = self
         table.dataSource = self
-        Single.shared.progress = self
+        
         
     }
 
@@ -101,18 +101,16 @@ extension ProgressViewCell: UITableViewDelegate{
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
             
             
-            DataManager.shared.removeTask(i: indexPath.row)
+            DataManager.shared.removeTask(i: indexPath.section)
             self.delegate?.updateData()
             
-            self.table.deleteSections([indexPath.section], with: .automatic)
         }
         
         let compleateAction = UIContextualAction(style: .normal, title: "Compleate") {  (contextualAction, view, boolValue) in
             
-            DataManager.shared.compleated(i: indexPath.row)
+            DataManager.shared.compleated(i: indexPath.section)
             self.delegate?.updateData()
             
-            self.table.deleteSections([indexPath.section], with: .automatic)
         }
         
         let swipeActions = UISwipeActionsConfiguration(actions: [compleateAction, deleteAction])

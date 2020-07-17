@@ -32,7 +32,7 @@ class CompleateTableViewCell: UITableViewCell {
             super.setSelected(selected, animated: animated)
         }
         
-        func animate(cell: UITableViewCell, gool: Task) {
+        func animate(cell: UITableViewCell, gool: CompleatedTask) {
             let shapeLayer = CAShapeLayer()
             let center = cell.contentView.convert(CGPoint(x: 330, y: 35), from: self)
 
@@ -91,8 +91,6 @@ class CompleateTableViewCell: UITableViewCell {
 
                 DataManager.shared.removeCompleatedTask(i: indexPath.row)
                 self.delegate?.updateData()
-                
-                self.table.deleteSections([indexPath.section], with: .automatic)
             }
             
             let swipeActions = UISwipeActionsConfiguration(actions: [deleteAction])
@@ -109,7 +107,7 @@ class CompleateTableViewCell: UITableViewCell {
     extension CompleateTableViewCell: UITableViewDataSource{
         
         func numberOfSections(in tableView: UITableView) -> Int {
-            return DataManager.shared.compleatedTasks.count ?? 0
+            return DataManager.shared.compleatedTasks.count
            }
         
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -117,7 +115,7 @@ class CompleateTableViewCell: UITableViewCell {
         }
         
         func numberOfSections(tableView: UITableView) -> Int {
-            return DataManager.shared.compleatedTasks.count ?? 0
+            return DataManager.shared.compleatedTasks.count
         }
         
         func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -134,7 +132,7 @@ class CompleateTableViewCell: UITableViewCell {
             let cell = UITableViewCell()
             
             
-//            cell.textLabel?.text = self.delegate?.manager().compleatedTasks[indexPath.section].nameOfTask ?? nil
+            cell.textLabel?.text = DataManager.shared.compleatedTasks[indexPath.section].name ?? nil
             
             cell.backgroundColor = #colorLiteral(red: 0.373221159, green: 0.9422872663, blue: 0.3649424314, alpha: 1)
             cell.layer.borderWidth = 0
