@@ -19,7 +19,7 @@ class CompleateTableViewCell: UITableViewCell {
         override func awakeFromNib() {
             super.awakeFromNib()
             
-            title?.text = "Compleated"
+            
             table.delegate = self
             table.dataSource = self
           

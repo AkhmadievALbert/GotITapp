@@ -16,8 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="369" height="306"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sej-qt-Y3f">
-                        <rect key="frame" x="0.0" y="0.0" width="369" height="32.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цели в процессе" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sej-qt-Y3f">
+                        <rect key="frame" x="0.0" y="0.0" width="369" height="33"/>
                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

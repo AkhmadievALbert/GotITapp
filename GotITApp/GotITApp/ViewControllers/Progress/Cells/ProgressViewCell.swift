@@ -25,7 +25,7 @@ class ProgressViewCell: UITableViewCell {
         super.awakeFromNib()
         
         
-        title?.text = "Progress"
+        
         table.delegate = self
         table.dataSource = self
         
@@ -54,12 +54,12 @@ class ProgressViewCell: UITableViewCell {
         trackLayer.lineWidth = 5
         trackLayer.fillColor = UIColor.white.cgColor
         cell.contentView.layer.addSublayer(trackLayer)
-    
         
         let label = CATextLayer()
+        
         label.string = String (gool.countOfDay)
         label.fontSize = 14
-        label.frame = CGRect(x: 0, y: 0, width: trackLayer.bounds.width, height: trackLayer.bounds.height)
+        label.frame = CGRect(x: 330, y: 35, width: trackLayer.bounds.width, height: trackLayer.bounds.height)
         label.isHidden = false
         
         trackLayer.addSublayer(label)
@@ -105,7 +105,7 @@ extension ProgressViewCell: UITableViewDelegate{
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
             
-            self.tokenManager.minusToken(token: 10)
+            TokenManager.minusToken(value: 10)
             DataManager.shared.removeTask(i: indexPath.section)
             self.delegate?.updateData()
             
@@ -113,7 +113,7 @@ extension ProgressViewCell: UITableViewDelegate{
         
         let compleateAction = UIContextualAction(style: .normal, title: "Compleate") {  (contextualAction, view, boolValue) in
             
-            self.tokenManager.addToken(token: DataManager.shared.tasks[indexPath.section].countOfDay*5)
+            TokenManager.addToken(value: DataManager.shared.tasks[indexPath.section].countOfDay*5)
             DataManager.shared.compleated(i: indexPath.section)
             self.delegate?.updateData()
             

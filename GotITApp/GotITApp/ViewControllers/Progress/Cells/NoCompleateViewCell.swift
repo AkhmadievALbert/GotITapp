@@ -19,7 +19,7 @@ class NoCompleateViewCell: UITableViewCell {
         override func awakeFromNib() {
             super.awakeFromNib()
             
-            title?.text = "No Compleated"
+            
             table.delegate = self
             table.dataSource = self
             
