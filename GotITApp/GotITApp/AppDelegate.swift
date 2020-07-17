@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -29,6 +30,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
              }
          }
         return true
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        checkDate()
+        
+        let vC = OptionViewController()
+        
+        for task in DataManager.shared.tasks{
+            if task.interval >= task.countOfDay{
+                vC.sendNotification()
+            }
+        }
     }
     
     func checkDate(){
