@@ -11,6 +11,8 @@ import CoreData
 
 class ProgressViewCell: UITableViewCell {
     
+    let tokenManager = TokenManager()
+    
     @IBOutlet weak var title: UILabel!
     
     @IBOutlet weak var table: UITableView!
@@ -103,7 +105,7 @@ extension ProgressViewCell: UITableViewDelegate{
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") {  (contextualAction, view, boolValue) in
             
-            
+            self.tokenManager.minusToken(token: 10)
             DataManager.shared.removeTask(i: indexPath.section)
             self.delegate?.updateData()
             
@@ -111,6 +113,7 @@ extension ProgressViewCell: UITableViewDelegate{
         
         let compleateAction = UIContextualAction(style: .normal, title: "Compleate") {  (contextualAction, view, boolValue) in
             
+            self.tokenManager.addToken(token: DataManager.shared.tasks[indexPath.section].countOfDay*5)
             DataManager.shared.compleated(i: indexPath.section)
             self.delegate?.updateData()
             

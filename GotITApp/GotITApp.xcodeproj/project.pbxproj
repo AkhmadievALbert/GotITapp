@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060AB07924C2133B00B009EC /* tokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AB07824C2133B00B009EC /* tokenManager.swift */; };
+		060AB07924C2133B00B009EC /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060AB07824C2133B00B009EC /* TokenManager.swift */; };
 		0617EAC524BA2D7E000D5FDB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAC424BA2D7E000D5FDB /* AppDelegate.swift */; };
 		0617EAC724BA2D7E000D5FDB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0617EAC624BA2D7E000D5FDB /* SceneDelegate.swift */; };
 		0617EACE24BA2D7F000D5FDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0617EACD24BA2D7F000D5FDB /* Assets.xcassets */; };
@@ -38,7 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		060AB07824C2133B00B009EC /* tokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tokenManager.swift; sourceTree = "<group>"; };
+		060AB07824C2133B00B009EC /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		0617EAC124BA2D7E000D5FDB /* GotITApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GotITApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0617EAC424BA2D7E000D5FDB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0617EAC624BA2D7E000D5FDB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				0617EAD224BA2D7F000D5FDB /* Info.plist */,
 				0649C29624C0796100E4FD6B /* DataManager.swift */,
 				A9A3A66924C0FBFB0035BCA3 /* Single.swift */,
-				060AB07824C2133B00B009EC /* tokenManager.swift */,
+				060AB07824C2133B00B009EC /* TokenManager.swift */,
 			);
 			path = GotITApp;
 			sourceTree = "<group>";
@@ -292,7 +292,7 @@
 				0649C27D24BC940600E4FD6B /* Gool.swift in Sources */,
 				0649C29724C0796100E4FD6B /* DataManager.swift in Sources */,
 				0649C28524BD8C3400E4FD6B /* NoCompleateViewCell.swift in Sources */,
-				060AB07924C2133B00B009EC /* tokenManager.swift in Sources */,
+				060AB07924C2133B00B009EC /* TokenManager.swift in Sources */,
 				0617EAEA24BA35C5000D5FDB /* OptionViewController.swift in Sources */,
 				0617EAF924BA3EBA000D5FDB /* AddViewController.swift in Sources */,
 				A9DE895324C1B589001CE8C2 /* ItemCell.swift in Sources */,

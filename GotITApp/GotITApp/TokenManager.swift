@@ -8,7 +8,7 @@
 
 import Foundation
 
-class tokenManager{
+class TokenManager{
     var token: Double = 0;
     let key = "Token"
     
