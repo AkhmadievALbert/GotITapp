@@ -43,7 +43,7 @@ class TokenManager{
     private static func save() {
         print(TokenManager.items)
         
-        UserDefaults.standard.set(token, forKey: key)
+        UserDefaults.standard.set(TokenManager.token, forKey: key)
         UserDefaults.standard.set(TokenManager.items, forKey: keyItems)
     }
     

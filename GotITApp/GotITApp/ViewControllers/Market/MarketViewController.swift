@@ -36,6 +36,8 @@ class MarketViewController: UIViewController {
         super.viewWillAppear(animated)
         navBar.title = String(TokenManager.token)
     }
+    
+    
 }
 
 extension MarketViewController: UITableViewDataSource, UITableViewDelegate {

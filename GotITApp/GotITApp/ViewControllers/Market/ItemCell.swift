@@ -14,17 +14,21 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var itemButton: UIButton!
     
-    static var price: Double = 0
+    var price: Double!
     
     @IBAction func buyItem(_ sender: Any) {
-        if !TokenManager.items.contains(nameLabel.text!) && TokenManager.token >= ItemCell.price {
+        print(self.price!)
+        print(TokenManager.token)
+        if TokenManager.token >= self.price! && !TokenManager.items.contains(nameLabel.text!) {
             TokenManager.buyItem(name: nameLabel.text!)
+            TokenManager.minusToken(value: self.price)
+            changeButtonTitle()
+            UIApplication.shared.keyWindow?.rootViewController?.viewWillAppear(false)
             //print(tokenManager.items)
         } else {
-            
+            notEnoughTokens()
         }
-        
-        changeButtonTitle()
+    
     }
     
     func changeButtonTitle() {
@@ -37,7 +41,7 @@ class ItemCell: UITableViewCell {
     func setItem(item: Item) {
         itemImageView.image = item.image
         nameLabel.text = item.title
-        ItemCell.price = Double(item.price)
+        self.price = Double(item.price)
         
         if TokenManager.items.contains(item.title) {
             changeButtonTitle()
@@ -46,10 +50,9 @@ class ItemCell: UITableViewCell {
         }
     }
     
-    func notEnoughTokensAlert() {
-        let alertController = UIAlertController(title: "Welcome to My First App", message: "Hello World", preferredStyle: UIAlertController.Style.alert)
+    func notEnoughTokens() {
+        let alertController = UIAlertController(title: "Ошибка", message: "Недостаточно монет", preferredStyle: UIAlertController.Style.alert)
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        let _: Void = MarketViewController()
-        .present(alertController, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.present(alertController, animated: true, completion: nil)
     }
 }
