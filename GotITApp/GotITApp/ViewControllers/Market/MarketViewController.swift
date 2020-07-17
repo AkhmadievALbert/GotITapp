@@ -10,6 +10,8 @@ import UIKit
 
 class MarketViewController: UIViewController {
 
+    let tokenManager = TokenManager()
+    
     @IBOutlet var storeTableView: UITableView!
     
     var items: [Item] = []

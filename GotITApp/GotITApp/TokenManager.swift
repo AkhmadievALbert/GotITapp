@@ -11,6 +11,8 @@ import Foundation
 class TokenManager{
     var token: Double = 0;
     let key = "Token"
+    var items = [String]()
+    let keyItems = "Items"
     
     init() {
         loadData()
@@ -30,9 +32,16 @@ class TokenManager{
     
     private func loadData(){
         token = UserDefaults.standard.double(forKey: key)
+        items = UserDefaults.standard.array(forKey: keyItems) as? [String] ?? []
+    }
+    
+    func buyItem(name: String){
+        items.append(name)
+        save()
     }
     
     private func save(){
         UserDefaults.standard.set(token, forKey: key)
+        UserDefaults.standard.set(items, forKey: keyItems)
     }
 }
