@@ -15,14 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-BR-19O">
-                                <rect key="frame" x="20" y="111" width="374" height="702"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b6h-BR-19O">
+                                <rect key="frame" x="20" y="109" width="374" height="704"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhW-tz-ykT">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhW-tz-ykT">
                                 <rect key="frame" x="361" y="44" width="33" height="77"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="54"/>
                                 <state key="normal" title="+"/>
                                 <connections>
@@ -31,6 +29,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PhW-tz-ykT" firstAttribute="top" secondItem="G33-16-BfK" secondAttribute="top" id="Khk-kN-ABA"/>
+                            <constraint firstItem="b6h-BR-19O" firstAttribute="top" secondItem="G33-16-BfK" secondAttribute="top" constant="65" id="Lgh-7s-6wV"/>
+                            <constraint firstItem="b6h-BR-19O" firstAttribute="leading" secondItem="G33-16-BfK" secondAttribute="leading" constant="20" id="MBh-sE-G2l"/>
+                            <constraint firstItem="b6h-BR-19O" firstAttribute="bottom" secondItem="G33-16-BfK" secondAttribute="bottom" id="NQ5-rh-t7U"/>
+                            <constraint firstItem="G33-16-BfK" firstAttribute="trailing" secondItem="b6h-BR-19O" secondAttribute="trailing" constant="20" id="afo-pG-c9E"/>
+                            <constraint firstItem="G33-16-BfK" firstAttribute="trailing" secondItem="PhW-tz-ykT" secondAttribute="trailing" constant="20" id="zb5-rh-wT4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="G33-16-BfK"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="progressIcon" id="Bsm-rk-Yv5"/>

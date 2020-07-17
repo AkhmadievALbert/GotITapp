@@ -64,7 +64,7 @@ class DataManager {
         }
     }
     
-    func addTask(name: String, countOfday: Double, date: Date){
+    func addTask(name: String, countOfday: Double, date: String){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         
