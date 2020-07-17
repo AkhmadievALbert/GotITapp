@@ -9,39 +9,43 @@
 import Foundation
 
 class TokenManager{
-    var token: Double = 0;
-    let key = "Token"
-    var items = [String]()
-    let keyItems = "Items"
+    static var token: Double = 0;
+    static let key = "Token"
+    static var items = [String]()
+    static let keyItems = "Items"
     
     init() {
-        loadData()
     }
     
-    func addToken(token: Double){
-        self.token += token
+    static func addToken(value: Double){
+        TokenManager.token += value
         save()
     }
     
-    func minusToken(token: Double){
-        if self.token > token {
-            self.token -= token
+    static func minusToken(value: Double){
+        if TokenManager.token > value {
+            TokenManager.token -= value
         }
         save()
     }
     
-    private func loadData(){
-        token = UserDefaults.standard.double(forKey: key)
-        items = UserDefaults.standard.array(forKey: keyItems) as? [String] ?? []
+    static func loadData() {
+        TokenManager.token = UserDefaults.standard.double(forKey: TokenManager.key)
+        TokenManager.items = UserDefaults.standard.array(forKey: keyItems) as? [String] ?? [String]()
     }
     
-    func buyItem(name: String){
-        items.append(name)
+    static func buyItem(name: String){
+        print("\(name) added")
+        TokenManager.items.append(name)
         save()
     }
     
-    private func save(){
+    private static func save() {
+        print(TokenManager.items)
+        
         UserDefaults.standard.set(token, forKey: key)
-        UserDefaults.standard.set(items, forKey: keyItems)
+        UserDefaults.standard.set(TokenManager.items, forKey: keyItems)
     }
+    
+
 }
