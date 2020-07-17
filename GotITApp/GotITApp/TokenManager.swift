@@ -18,12 +18,14 @@ class TokenManager{
     
     func addToken(token: Double){
         self.token += token
+        save()
     }
     
     func minusToken(token: Double){
         if self.token > token {
             self.token -= token
         }
+        save()
     }
     
     private func loadData(){
