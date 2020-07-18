@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LNg-Up-1vw">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LNg-Up-1vw">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,14 +12,41 @@
             <objects>
                 <viewController id="LNg-Up-1vw" customClass="AddViewController" customModule="GotITApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsL-q3-oRw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-tQ-KGF">
-                                <rect key="frame" x="0.0" y="459" width="414" height="216"/>
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DJy-tQ-KGF">
+                                <rect key="frame" x="0.0" y="354.66666666666669" width="375" height="216.00000000000006"/>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваша цель" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj9-Ji-CRO">
+                                <rect key="frame" x="100" y="54" width="214" height="41"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xkp-DL-yfG">
+                                <rect key="frame" x="50" y="123" width="275" height="42.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.70154657166958267" green="0.78104648627147777" blue="0.51227074938373074" alpha="0.38074933978873238" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ub1-cT-MDf">
+                                <rect key="frame" x="313" y="250" width="61" height="52.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="40"/>
+                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="За сколько дней ты выполнишь цель?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMZ-4h-c0O">
+                                <rect key="frame" x="40" y="242" width="263" height="68.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoL-ek-xWf">
-                                <rect key="frame" x="69" y="707" width="281" height="67"/>
+                                <rect key="frame" x="100" y="603" width="214" height="67"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="cSe-Ep-X7y"/>
@@ -32,52 +59,17 @@
                                     <action selector="checkAddTarget:" destination="LNg-Up-1vw" eventType="touchUpInside" id="mnD-2A-YYZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ваша цель" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj9-Ji-CRO">
-                                <rect key="frame" x="100" y="98" width="214" height="41"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="За сколько дней ты выполнишь цель?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jMZ-4h-c0O">
-                                <rect key="frame" x="40" y="390" width="263" height="68.5"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xkp-DL-yfG">
-                                <rect key="frame" x="50" y="167" width="314" height="42.5"/>
-                                <color key="backgroundColor" red="0.70154657166958267" green="0.78104648627147777" blue="0.51227074938373074" alpha="0.38074933978873238" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ub1-cT-MDf">
-                                <rect key="frame" x="303" y="399" width="100" height="52.5"/>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="40"/>
-                                <color key="textColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="ub1-cT-MDf" firstAttribute="leading" secondItem="A0H-sO-EWh" secondAttribute="leading" constant="303" id="4Qk-FN-46Z"/>
-                            <constraint firstItem="A0H-sO-EWh" firstAttribute="trailing" secondItem="DJy-tQ-KGF" secondAttribute="trailing" id="4V9-MZ-ck9"/>
-                            <constraint firstItem="jMZ-4h-c0O" firstAttribute="top" secondItem="Xkp-DL-yfG" secondAttribute="bottom" constant="180.5" id="6uX-bv-j1t"/>
-                            <constraint firstItem="cj9-Ji-CRO" firstAttribute="leading" secondItem="A0H-sO-EWh" secondAttribute="leading" constant="100" id="79b-Rg-bYL"/>
-                            <constraint firstItem="HoL-ek-xWf" firstAttribute="top" secondItem="DJy-tQ-KGF" secondAttribute="bottom" constant="32.5" id="9bx-FC-Nds"/>
-                            <constraint firstItem="DJy-tQ-KGF" firstAttribute="top" secondItem="jMZ-4h-c0O" secondAttribute="bottom" id="IPq-8l-H4r"/>
-                            <constraint firstItem="A0H-sO-EWh" firstAttribute="trailing" secondItem="ub1-cT-MDf" secondAttribute="trailing" constant="11" id="O79-pc-t7W"/>
-                            <constraint firstItem="cj9-Ji-CRO" firstAttribute="top" secondItem="A0H-sO-EWh" secondAttribute="top" constant="54" id="OyW-ah-XXq"/>
-                            <constraint firstItem="Xkp-DL-yfG" firstAttribute="leading" secondItem="A0H-sO-EWh" secondAttribute="leading" constant="50" id="UCJ-f0-jff"/>
-                            <constraint firstItem="A0H-sO-EWh" firstAttribute="trailing" secondItem="HoL-ek-xWf" secondAttribute="trailing" constant="64" id="Zct-PY-ioz"/>
-                            <constraint firstItem="A0H-sO-EWh" firstAttribute="trailing" secondItem="cj9-Ji-CRO" secondAttribute="trailing" constant="100" id="cdh-JI-pvm"/>
-                            <constraint firstItem="HoL-ek-xWf" firstAttribute="leading" secondItem="A0H-sO-EWh" secondAttribute="leading" constant="69" id="dgD-5F-WtO"/>
-                            <constraint firstItem="ub1-cT-MDf" firstAttribute="leading" secondItem="jMZ-4h-c0O" secondAttribute="trailing" id="dt1-bg-5xf"/>
-                            <constraint firstItem="ub1-cT-MDf" firstAttribute="top" secondItem="A0H-sO-EWh" secondAttribute="top" constant="355" id="fxU-pB-sAO"/>
-                            <constraint firstItem="jMZ-4h-c0O" firstAttribute="leading" secondItem="A0H-sO-EWh" secondAttribute="leading" constant="40" id="jTt-gZ-O4s"/>
-                            <constraint firstItem="Xkp-DL-yfG" firstAttribute="top" secondItem="cj9-Ji-CRO" secondAttribute="bottom" constant="28" id="k7c-B5-hnx"/>
-                            <constraint firstItem="A0H-sO-EWh" firstAttribute="trailing" secondItem="Xkp-DL-yfG" secondAttribute="trailing" constant="50" id="pLB-Eo-QRv"/>
-                            <constraint firstItem="DJy-tQ-KGF" firstAttribute="leading" secondItem="A0H-sO-EWh" secondAttribute="leading" id="rxR-2F-uoM"/>
+                            <constraint firstItem="cj9-Ji-CRO" firstAttribute="top" secondItem="A0H-sO-EWh" secondAttribute="top" constant="54" id="3F8-Md-G0a"/>
+                            <constraint firstItem="A0H-sO-EWh" firstAttribute="bottom" secondItem="HoL-ek-xWf" secondAttribute="bottom" constant="66" id="H0G-h1-bbb"/>
+                            <constraint firstItem="cj9-Ji-CRO" firstAttribute="leading" secondItem="A0H-sO-EWh" secondAttribute="leading" constant="100" id="L1v-Uo-07O"/>
+                            <constraint firstItem="HoL-ek-xWf" firstAttribute="leading" secondItem="A0H-sO-EWh" secondAttribute="leading" constant="100" id="rz1-jz-s5V"/>
+                            <constraint firstItem="A0H-sO-EWh" firstAttribute="trailing" secondItem="cj9-Ji-CRO" secondAttribute="trailing" constant="100" id="tuA-BP-vg7"/>
+                            <constraint firstItem="HoL-ek-xWf" firstAttribute="top" secondItem="DJy-tQ-KGF" secondAttribute="bottom" constant="32.5" id="xUa-qf-Bdv"/>
+                            <constraint firstItem="A0H-sO-EWh" firstAttribute="trailing" secondItem="HoL-ek-xWf" secondAttribute="trailing" constant="100" id="yAG-hF-agV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A0H-sO-EWh"/>
                         <connections>

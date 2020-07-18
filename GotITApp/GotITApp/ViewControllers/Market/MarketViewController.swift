@@ -34,7 +34,9 @@ class MarketViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         navBar.title = String(TokenManager.token)
+        
     }
     
     

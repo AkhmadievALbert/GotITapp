@@ -57,9 +57,13 @@ class ProgressViewCell: UITableViewCell {
         
         let label = CATextLayer()
         
+        
+        
         label.string = String (gool.countOfDay)
-        label.fontSize = 14
-        label.frame = CGRect(x: 330, y: 35, width: trackLayer.bounds.width, height: trackLayer.bounds.height)
+        label.foregroundColor = UIColor.lightGray.cgColor
+        label.fontSize = 25
+        label.frame = CGRect(x: 315, y: 20, width: 30, height: 30)
+        print(label.position)
         label.isHidden = false
         
         trackLayer.addSublayer(label)
@@ -113,7 +117,7 @@ extension ProgressViewCell: UITableViewDelegate{
         
         let compleateAction = UIContextualAction(style: .normal, title: "Compleate") {  (contextualAction, view, boolValue) in
             
-            TokenManager.addToken(value: DataManager.shared.tasks[indexPath.section].countOfDay*5)
+            TokenManager.addToken(value: DataManager.shared.tasks[indexPath.section].countOfDay*500)
             DataManager.shared.compleated(i: indexPath.section)
             self.delegate?.updateData()
             

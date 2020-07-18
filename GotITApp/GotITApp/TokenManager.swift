@@ -23,9 +23,8 @@ class TokenManager{
     }
     
     static func minusToken(value: Double){
-        if TokenManager.token > value {
-            TokenManager.token -= value
-        }
+        
+        TokenManager.token -= value
         save()
     }
     

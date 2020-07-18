@@ -23,8 +23,9 @@ class ItemCell: UITableViewCell {
             TokenManager.buyItem(name: nameLabel.text!)
             TokenManager.minusToken(value: self.price)
             changeButtonTitle()
-            UIApplication.shared.keyWindow?.rootViewController?.viewWillAppear(false)
-            //print(tokenManager.items)
+            UIApplication.shared.keyWindow?.rootViewController?.viewDidLoad()
+            UIApplication.shared.keyWindow?.rootViewController?.viewWillAppear(true)
+            UIApplication.shared.keyWindow?.rootViewController?.navigationController?.title = String (TokenManager.token)
         } else {
             notEnoughTokens()
         }

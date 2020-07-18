@@ -44,10 +44,13 @@ class CompleateTableViewCell: UITableViewCell {
 
             trackLayer.strokeColor = UIColor.lightGray.cgColor
             trackLayer.lineWidth = 5
+            
             trackLayer.fillColor = UIColor.white.cgColor
             shapeLayer.lineCap = .round
             cell.contentView.layer.addSublayer(trackLayer)
 
+            
+            
             
             let circularPathProgress = UIBezierPath(arcCenter: center, radius: 25, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi*2, clockwise: true)
             shapeLayer.path = circularPathProgress.cgPath
